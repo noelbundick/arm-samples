@@ -1,0 +1,81 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "clusterName": {
+      "value": "nobunsf"
+    },
+    "clusterLocation": {
+      "value": "southcentralus"
+    },
+    "computeLocation": {
+      "value": "southcentralus"
+    },
+    "adminUserName": {
+      "value": "noel"
+    },
+    "adminPassword": {
+      "value": "Pa$$word1"
+    },
+    "nicName": {
+      "value": "NIC-nobunsf"
+    },
+    "publicIPAddressName": {
+      "value": "nobunsf-PubIP"
+    },
+    "dnsName": {
+      "value": "nobunsf"
+    },
+    "virtualNetworkName": {
+      "value": "VNet-nobunsf"
+    },
+    "lbName": {
+      "value": "LB-nobunsf"
+    },
+    "lbIPName": {
+      "value": "LBIP-nobunsf"
+    },
+    "applicationDiagnosticsStorageAccountName": {
+      "value": "sfdgnobunsf1723"
+    },
+    "supportLogStorageAccountName": {
+      "value": "sflogsnobunsf7803"
+    },
+    "sourceVaultValue": {
+      "value": "/subscriptions/6c1f4f3b-f65f-4667-8f9e-b9c48e09cd6b/resourceGroups/keyvault-scus/providers/Microsoft.KeyVault/vaults/nobun-scus"
+    },
+    "certificateUrlValue": {
+      "value": "https://nobun-scus.vault.azure.net/secrets/nobunsf/92f486d72fb949c9932b3751d4fcb10e"
+    },
+    "certificateThumbprint": {
+      "value": "44E74548E3E6AD34CDF4C8DA11A81EC116FDD97E"
+    },
+    "vmImageSku": {
+      "value": "2016-Datacenter-with-Containers"
+    },
+    "nt0ephemeralStartPort": {
+      "value": 49152
+    },
+    "nt0ephemeralEndPort": {
+      "value": 65534
+    },
+    "nt0applicationStartPort": {
+      "value": 20000
+    },
+    "nt0applicationEndPort": {
+      "value": 30000
+    },
+    "nt0fabricTcpGatewayPort": {
+      "value": 19000
+    },
+    "nt0fabricHttpGatewayPort": {
+      "value": 19080
+    },
+    "vmNodeType0Size": {
+      "value": "Standard_A2_v2"
+    },
+    "nt0InstanceCount": {
+      "value": 5
+    }
+  }
+}
