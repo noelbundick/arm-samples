@@ -77,6 +77,10 @@ These brackets are the signal to ARM that I'm using a function and this needs to
 * `resourceGroup().id` gets the current Resource Group, and returns the `id` property
   > This means that you'll get a different storage account name when you deploy this to another resource group, which is nice because you won't have to update anything! It can feel like magic, but there's a method to the madness
 
+### Learn more
+
+* [Create Your First Azure Resource Manager Template](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-create-first-template) - I found this after creating this repo, and it's nearly identical to this first step, with some additional explanation. Worth checking out
+
 ## 2. A Virtual Machine
 
 Virtual Machines are the building block of the IaaS world, and VM's in Azure have quite a bit going on - it's not just a compute resource. Here are some common things I've put together to get a single VM up and running:
@@ -200,7 +204,8 @@ Variables don't have to be strings or numbers - they can be complex objects or a
 ## Learn More
 
 * [Azure Portal](https://portal.azure.com) - Use the Azure Portal to walk through the create process, and then visit "Automation options" before hitting Create. This will show you the ARM template that would be used. It's a great way to learn what options are available
-* [azure-quickstart-templates](https://github.com/Azure/azure-quickstart-templates) - You'll look here often for reference, copy code, and then tweak to fit your particular use case
-* [Azure REST API reference](https://docs.microsoft.com/en-us/rest/api/) - If you need the nitty gritty details of what properties or values are available, you'll likely find it here
-* [Azure Resource Explorer](https://resources.azure.com/) - Not all properties are available in the portal to view or edit. You'll be able to see the full details and make some updates here
-* [Azure Resource Manager Template Functions](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-template-functions) - Don't try to memorize everything, but be aware of what's available and use this as a reference
+* [azure-quickstart-templates](https://github.com/Azure/azure-quickstart-templates) - You'll look here often for reference, to copy code, and then tweak to fit your particular use case
+* [Azure REST API reference](https://docs.microsoft.com/en-us/rest/api/) - If you need the nitty gritty details of what properties or values are available for a given resource type, you'll likely find it here
+* [Azure Resource Explorer](https://resources.azure.com/) - Not all properties are available in the portal to view or edit. And not all of them are always documented :( You'll be able to see the full details of what's coming across the wire and make some updates here
+* [Azure Resource Manager Template Functions](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-template-functions) - Don't try to memorize everything, but be aware of what's available and use this as a reference when you need it. VS Code tooling helps here too
+* [Azure Resource Manager Documentation](https://docs.microsoft.com/en-us/azure/azure-resource-manager/) - There's a huge amount of information under the "How to" menu section. Again - it's good to know where to look when you get stuck
