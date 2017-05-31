@@ -685,7 +685,7 @@
           }
         ],
         "provisioningState": "Default",
-        "reliabilityLevel": "Bronze",
+        "reliabilityLevel": "Silver",
         "upgradeMode": "Automatic",
         "vmImage": "Windows"
       },
