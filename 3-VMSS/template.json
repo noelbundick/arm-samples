@@ -11,9 +11,13 @@
     "adminPassword": {
       "type": "securestring"
     },
+    "vmSize": {
+      "type": "string",
+      "defaultValue": "Standard_A1_v2"
+    },
     "instanceCount": {
       "type": "int",
-      "defaultValue": 1
+      "defaultValue": 3
     }
   },
   "variables": {
@@ -28,7 +32,10 @@
     "bePoolName": "[concat(variables('namingInfix'), 'bepool')]",
     "sshNatPoolName": "[concat(variables('namingInfix'), 'sshnatpool')]",
     "nicName": "[concat(variables('namingInfix'), 'nic')]",
-    "ipConfigName": "[concat(variables('namingInfix'), 'ipconfig')]"
+    "ipConfigName": "[concat(variables('namingInfix'), 'ipconfig')]",
+    "imagePublisher": "Canonical",
+    "imageOffer": "UbuntuServer",
+    "imageSku": "16.04.0-LTS"
   },
   "resources": [
     {
@@ -114,7 +121,7 @@
         "[resourceId('Microsoft.Network/loadBalancers', variables('lbName'))]"
       ],
       "sku": {
-        "name": "Standard_A1_v2",
+        "name": "[parameters('vmSize')]",
         "tier": "Standard",
         "capacity": "[parameters('instanceCount')]"
       },
@@ -129,9 +136,9 @@
               "createOption": "FromImage"
             },
             "imageReference": {
-              "publisher": "Canonical",
-              "offer": "UbuntuServer",
-              "sku": "16.04.0-LTS",
+              "publisher": "[variables('imagePublisher')]",
+              "offer": "[variables('imageOffer')]",
+              "sku": "[variables('imageSku')]",
               "version": "latest"
             }
           },

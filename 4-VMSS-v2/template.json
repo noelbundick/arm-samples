@@ -3,31 +3,34 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "vmssName": {
-      "type": "string",
-      "defaultValue": "myVMSS"
-    },
-    "instanceCount": {
-      "type": "int",
-      "defaultValue": 2
-    },
-    "imagePublisher": {
-      "type": "string",
-      "defaultValue": "CoreOS"
-    },
-    "imageOffer": {
-      "type": "string",
-      "defaultValue": "CoreOS"
-    },
-    "imageSku": {
-      "type": "string",
-      "defaultValue": "Stable"
+      "type": "string"
     },
     "adminUsername": {
       "type": "string",
-      "defaultValue": "topsecret"
+      "defaultValue": "admin"
     },
     "sshPublicKey": {
       "type": "string"
+    },
+    "vmSize": {
+      "type": "string",
+      "defaultValue": "Standard_A1_v2"
+    },
+    "instanceCount": {
+      "type": "int",
+      "defaultValue": 3
+    },
+    "imagePublisher": {
+      "type": "string",
+      "defaultValue": "Canonical"
+    },
+    "imageOffer": {
+      "type": "string",
+      "defaultValue": "UbuntuServer"
+    },
+    "imageSku": {
+      "type": "string",
+      "defaultValue": "16.04.0-LTS"
     }
   },
   "variables": {
@@ -130,7 +133,7 @@
         "[resourceId('Microsoft.Network/loadBalancers', variables('lbName'))]"
       ],
       "sku": {
-        "name": "Standard_A1_v2",
+        "name": "[parameters('vmSize')]",
         "tier": "Standard",
         "capacity": "[parameters('instanceCount')]"
       },
