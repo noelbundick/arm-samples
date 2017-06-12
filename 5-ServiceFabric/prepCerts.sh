@@ -1,7 +1,6 @@
 #/bin/bash
 
-rm -rf ./results
-mkdir results && pushd results
+mkdir certs && pushd certs
 
 VAULT_NAME=$1
 CLUSTER_FQDN=$2
@@ -33,6 +32,7 @@ echo "certificateUrlValue: ${SECRET_ID}"
 # Get the fingerprint and put into Azure-friendly format by stripping "SHA1 Fingerprint=" and separating colons
 THUMBPRINT=$(openssl x509 -in ${CLUSTER_FQDN}.crt -fingerprint -noout | sed -r -e 's/.{17}//' -e 's/://g')
 echo "certificateThumbprint: ${THUMBPRINT}"
+popd
 
 # To retrieve & decode the secret from KeyVault. 
 # This performs the inverse of the above steps
