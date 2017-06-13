@@ -175,7 +175,7 @@ Setting up the certs and secrets in Key Vault for Service Fabric ARM templates i
 > #### [Create a Self-Signed Certificate in Key Vault for Service Fabric](5-ServiceFabric/prepCerts.sh) 
 >  Make sure you have a Key Vault: 
 > ```bash
-> az keyvault create -n nobun-temp -g keyvault2 --enabled-for-deployment --enabled-for-disk-encryption --enabled-for-template-deployment`
+> az keyvault create -n nobun-temp -g keyvault2 --enabled-for-deployment --enabled-for-disk-encryption --enabled-for-template-deployment
 > ```
 > Create a self-signed cert, wrap it in some JSON, and put it into Key Vault
 > ```bash
