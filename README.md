@@ -207,6 +207,20 @@ Variables don't have to be strings or numbers - they can be complex objects or a
 
 * I've added an additional output for the cluster management endpoint so I don't have to go look it up later.
 
+## 6. Search Services (Azure Search)
+Azure Search is a fully managed cloud search service that provides a rich search experience to custom applications.
+
+### Parameters
+
+The defined parameters are quite self explanatory with a few exceptions:
+* serviceName - Service name is used to identify the Search service deployment as a sub domain on `search.windows.net`
+
+* hostingMode - applicable only for the standard3 SKU. For other SKU, set to "Default"
+
+### Resources
+
+* Service name must only contain lowercase letters, digits or dashes, cannot use dash as the first two or last one characters, cannot contain consecutive dashes, and is limited between 2 and 60 characters in length.
+
 ## Learn More
 
 * [Azure Portal](https://portal.azure.com) - Use the Azure Portal to walk through the create process, and then visit "Automation options" before hitting Create. This will show you the ARM template that would be used. It's a great way to learn what options are available
